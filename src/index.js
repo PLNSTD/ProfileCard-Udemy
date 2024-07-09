@@ -1,17 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Card from "./Card";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+function App() {
+  const cardInfo = {
+    name: "Jonas Schmedtmann",
+    description:
+      "Full-stack web developer and teacher at Udemy. When not coding or preparing a course, I like to play board games, to cook (and eat), or to just enjoy the Portuguese sun at the beach.",
+    skills: [
+      { skillName: "HTML+CSS", skillLevel: "High" },
+      { skillName: "JavaScript", skillLevel: "High" },
+      { skillName: "Web Design", skillLevel: "High" },
+      { skillName: "Git and GitHub", skillLevel: "Normal" },
+      { skillName: "React", skillLevel: "High" },
+      { skillName: "Svelte", skillLevel: "Low" },
+    ],
+  };
+  return <Card cardInfo={cardInfo} />;
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
